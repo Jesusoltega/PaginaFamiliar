@@ -1,0 +1,235 @@
+/* Estilos Generales y Reseteo Básico */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    /* --- FONDO LLAMATIVO Y RESALTANTE --- */
+    background: linear-gradient(to bottom right,rgb(223, 140, 134),rgb(226, 144, 144)); /* Un degradado suave de durazno a salmón claro */
+    background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll, creando un efecto visual más pulcro */
+    /* --- Fin del Fondo --- */
+    color: #333; /* Color de texto general */
+    display: flex; /* Para centrar el contenido principal */
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
+}
+
+/* El resto de tu CSS (header, main, message-section, image-gallery, etc.) va aquí sin cambios */
+
+/* Encabezado */
+header {
+    background-color: #6a0572; /* Morado profundo, elegante */
+    color: white;
+    padding: 2.5em 0; /* Más padding para que sea más imponente */
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Sombra más pronunciada */
+    border-bottom: 8px solid #a34eac; /* Borde más grueso y vistoso */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.2em; /* Título más grande */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sombra de texto suave */
+}
+
+header .subtitle {
+    font-size: 1.3em; /* Subtítulo un poco más grande */
+    opacity: 0.9;
+    margin-top: 15px;
+}
+
+/* Contenido Principal */
+main {
+    flex-grow: 1; /* Permite que el main ocupe el espacio restante */
+    padding: 40px 20px; /* Más espacio interior */
+    max-width: 1100px; /* Ancho máximo aumentado para más espacio */
+    margin: 40px auto;
+    background-color: white;
+    box-shadow: 0 0 25px rgba(0,0,0,0.15); /* Sombra más suave y extendida */
+    border-radius: 12px; /* Bordes más redondeados */
+}
+
+/* Sección de Mensaje */
+.message-section {
+    text-align: center;
+    margin-bottom: 60px; /* Más espacio debajo del mensaje */
+    padding: 40px; /* Más padding */
+    background-color:rgb(228, 165, 165); /* Un lila muy suave, armoniza con el morado */
+    border-radius: 10px; /* Bordes más redondeados */
+    border: 1px solidrgb(216, 164, 164);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Sombra interna sutil */
+}
+
+.message-section p:first-of-type { /* Estilo para el primer párrafo "Con todo mi amor..." */
+    font-size: 1.2em;
+    color: #6a0572;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.message-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 15px auto; /* Centrar y añadir margen inferior */
+}
+
+/* Galería de Imágenes */
+.image-gallery {
+    display: grid;
+    /* Ajustado minmax para cuadros más grandes, ahora mínimo 320px */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px; /* Más espacio entre las imágenes */
+    padding: 20px 0;
+}
+
+.image-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Bordes más redondeados */
+    overflow: hidden; /* Asegura que la imagen no se salga del borde redondeado */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra más notable */
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animación al pasar el mouse */
+    display: flex; /* Usar flexbox para el contenido interno */
+    flex-direction: column;
+}
+
+.image-item:hover {
+    transform: translateY(-8px) scale(1.02); /* Pequeño levantamiento y agrandamiento al pasar el mouse */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25); /* Sombra más intensa al hover */
+}
+
+.image-item img {
+    width: 100%;
+    height: 300px; /* Altura fija aumentada para imágenes más grandes */
+    object-fit: cover; /* Recorta la imagen para que cubra el área sin distorsionarse. */
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.image-item p {
+    font-size: 1em;
+    color: #666;
+    margin: 15px 10px 20px 10px; /* Margen para espacio inferior */
+    padding: 0 10px;
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio restante */
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center; /* Centra horizontalmente el texto */
+}
+
+/* Pie de Página */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    background-color: #6a0572;
+    color: white;
+    font-size: 0.9em;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.25); /* Sombra más fuerte */
+}
+
+/* --- Estilos para la Ventana Modal --- */
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija en la pantalla */
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Cubre todo el ancho */
+    height: 100%; /* Cubre toda la altura */
+    overflow: auto; /* Permite scroll si el contenido es muy grande */
+    background-color: rgba(0,0,0,0.9); /* Fondo negro semi-transparente */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    flex-direction: column; /* Organizar imagen y texto en columna */
+    padding: 20px;
+    box-sizing: border-box; /* Incluir padding en el width/height */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%; /* Ajuste para que la imagen no sea demasiado grande */
+    max-height: 80vh; /* Ocupa como máximo el 80% de la altura de la ventana */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    object-fit: contain; /* Para que la imagen se vea completa dentro del modal */
+}
+
+/* Animación para que el modal aparezca suavemente */
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.caption {
+    margin-top: 20px;
+    color:rgb(223, 180, 180); /* Color de texto que contraste con el fondo oscuro */
+    font-size: 1.3em;
+    text-align: center;
+    padding: 10px 20px;
+    max-width: 90%;
+    background-color: rgba(0,0,0,0.5); /* Fondo semitransparente para la descripción */
+    border-radius: 5px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1001; /* Asegura que el botón esté por encima de la imagen */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media Queries para la Modal */
+@media only screen and (max-width: 768px) {
+    .modal-content {
+        max-width: 95%;
+        max-height: 75vh;
+    }
+    .caption {
+        font-size: 1.1em;
+        margin-top: 15px;
+    }
+    .close-button {
+        font-size: 30px;
+        top: 15px;
+        right: 25px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .modal-content {
+        max-width: 98%;
+        max-height: 70vh;
+    }
+    .caption {
+        font-size: 1em;
+        margin-top: 10px;
+    }
+    .close-button {
+        font-size: 28px;
+        top: 10px;
+        right: 20px;
+    }
+}
